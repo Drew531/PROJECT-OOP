@@ -1,0 +1,61 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5ebe0; /* Light brown */
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #5d001e; /* Dark maroon */
+}
+
+#activity5-container {
+  background-color: #ffffff; /* White */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(93, 0, 30, 0.3); /* Maroon shadow */
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  color: #800020; /* Maroon */
+}
+
+#tempInput {
+  padding: 0.5rem;
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 1rem;
+  border: 1px solid #d2b48c; /* Tan/light brown border */
+  border-radius: 4px;
+}
+
+#tempInput:focus {
+  outline: none;
+  border-color: #800020; /* Maroon on focus */
+  box-shadow: 0 0 5px #b5651d; /* Slight brown glow */
+}
+
+button {
+  background-color: #800020; /* Maroon */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5d001e; /* Darker maroon */
+}
+
+#result {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #5d001e;
+}

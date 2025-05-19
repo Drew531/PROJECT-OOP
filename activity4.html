@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Info Input with Design</title>
+  <link rel="stylesheet" href="activity4.css" />
+</head>
+<body>
+  <div class="box">
+    <h2>Enter Your Info</h2>
+    <form id="infoForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required />
+
+      <label for="age">Age</label>
+      <input type="number" id="age" name="age" placeholder="Your age" min="0" max="120" required />
+
+      <label for="contact">Contact Number</label>
+      <input type="tel" id="contact" name="contact" placeholder="123-456-7890" required />
+
+      <button type="submit">Confirm</button>
+    </form>
+  </div>
+
+  <div class="box">
+    <h2>Your Information</h2>
+    <div id="displayInfo">
+      <p><strong>Name:</strong> <span id="displayName">-</span></p>
+      <p><strong>Age:</strong> <span id="displayAge">-</span></p>
+      <p><strong>Contact Number:</strong> <span id="displayContact">-</span></p>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('infoForm');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const name = form.name.value.trim();
+      const age = form.age.value.trim();
+      const contact = form.contact.value.trim();
+
+      // Directly display the info (removed the confirmation alert)
+      document.getElementById('displayName').textContent = name || '-';
+      document.getElementById('displayAge').textContent = age || '-';
+      document.getElementById('displayContact').textContent = contact || '-';
+    });
+  </script>
+</body>
+</html>

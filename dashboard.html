@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div id="dashboard">
+    <aside id="sidebar">
+      <button id="toggleSidebar" title="Toggle Sidebar">☰</button>
+
+      <div class="logo">
+        <div class="logo-circle">
+          <img src="images/logo.jfif" alt="AM Logo" />
+        </div>
+        <h2 style="color:white;">AM</h2>
+      </div>
+
+      <div class="username" id="sidebar-username">User</div>
+      <nav>
+        <a href="#" class="nav-link active" data-section="home">Home</a>
+        <a href="#" class="nav-link" data-section="profile">Profile</a>
+        <a href="#" class="nav-link" data-section="reflection">Reflection</a>
+        <a href="#" class="nav-link" data-section="activity1">Activity 1</a>
+        <a href="#" class="nav-link" data-section="activity2">Activity 2</a>
+        <a href="#" class="nav-link" data-section="activity3">Activity 3</a>
+        <a href="#" class="nav-link" data-section="activity4">Activity 4</a>
+        <a href="#" class="nav-link" data-section="activity5">Activity 5</a>
+        <a href="#" class="nav-link logout" data-section="logout">Log out</a>
+      </nav>
+    </aside>
+
+    <section id="content">
+      <div id="home" class="section active">
+        <iframe src="home.html" frameborder="0"></iframe>
+      </div>
+      <div id="profile" class="section">
+        <iframe id="profile-frame" src="" frameborder="0"></iframe>
+      </div>
+      <div id="reflection" class="section">
+        <iframe id="reflection-frame" src="" frameborder="0"></iframe>
+      </div>
+      <div id="activity1" class="section">
+        <iframe src="activity1.html" frameborder="0"></iframe>
+      </div>
+      <div id="activity2" class="section">
+        <iframe src="activity2.html" frameborder="0"></iframe>
+      </div>
+      <div id="activity3" class="section">
+        <iframe src="activity3.html" frameborder="0"></iframe>
+      </div>
+      <div id="activity4" class="section">
+        <iframe src="activity4.html" frameborder="0"></iframe>
+      </div>
+      <div id="activity5" class="section">
+        <iframe src="activity5.html" frameborder="0"></iframe>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const sidebarUsername = document.getElementById('sidebar-username');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('#content .section');
+
+    function setActiveLink(link) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      if (link) link.classList.add('active');
+    }
+
+    function showSection(id) {
+      sections.forEach(section => {
+        section.classList.toggle('active', section.id === id);
+      });
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const sectionId = link.getAttribute('data-section');
+        if (sectionId === 'logout') {
+          window.location.href = 'login.html';
+          return;
+        }
+        setActiveLink(link);
+        showSection(sectionId);
+      });
+    });
+
+   
+    const params = new URLSearchParams(window.location.search);
+    const username = params.get("user");
+
+    if (username) {
+      sidebarUsername.textContent = username;
+
+      const profileFrame = document.getElementById('profile-frame');
+      const reflectionFrame = document.getElementById('reflection-frame');
+
+      profileFrame.src = `profile-${username}.html`;
+      reflectionFrame.src = `reflection-${username}.html`;
+    }
+
+    
+    const toggleBtn = document.getElementById('toggleSidebar');
+    const sidebar = document.getElementById('sidebar');
+    const dashboard = document.getElementById('dashboard');
+
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+      dashboard.classList.toggle('sidebar-collapsed');
+    });
+  </script>
+</body>
+</html>

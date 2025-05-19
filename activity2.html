@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Color Combination Picker</title>
+  <link rel="stylesheet" href="activity2.css" />
+</head>
+<body>
+  <div class="content-wrapper">
+    <div class="box" aria-label="Color combination picker form">
+      <h2>Pick Your Colors</h2>
+      <form id="colorForm">
+        <label for="color1">Choose first color</label>
+        <select id="color1" name="color1" required>
+          <option value="" disabled selected>Select first color</option>
+          <option value="#e63946" style="color:#e63946;">Red</option>
+          <option value="#457b9d" style="color:#457b9d;">Blue</option>
+          <option value="#2a9d8f" style="color:#2a9d8f;">Teal</option>
+          <option value="#f4a261" style="color:#f4a261;">Orange</option>
+          <option value="#8d99ae" style="color:#8d99ae;">Gray</option>
+          <option value="#6a994e" style="color:#6a994e;">Green</option>
+        </select>
+
+        <label for="color2">Choose second color</label>
+        <select id="color2" name="color2" required>
+          <option value="" disabled selected>Select second color</option>
+          <option value="#e63946" style="color:#e63946;">Red</option>
+          <option value="#457b9d" style="color:#457b9d;">Blue</option>
+          <option value="#2a9d8f" style="color:#2a9d8f;">Teal</option>
+          <option value="#f4a261" style="color:#f4a261;">Orange</option>
+          <option value="#8d99ae" style="color:#8d99ae;">Gray</option>
+          <option value="#6a994e" style="color:#6a994e;">Green</option>
+        </select>
+
+        <button type="submit">Submit</button>
+      </form>
+      <div id="result" role="region" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('colorForm');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const color1 = form.color1.value;
+      const color2 = form.color2.value;
+
+      if (!color1 || !color2) {
+        resultDiv.style.display = 'none';
+        return alert('Please select both colors.');
+      }
+      if (color1 === color2) {
+        resultDiv.style.display = 'none';
+        return alert('Please select two different colors.');
+      }
+
+      resultDiv.style.background = `linear-gradient(90deg, ${color1}, ${color2})`;
+      resultDiv.textContent = `Your color combination: ${color1} & ${color2}`;
+      resultDiv.style.display = 'block';
+    });
+  </script>
+</body>
+</html>

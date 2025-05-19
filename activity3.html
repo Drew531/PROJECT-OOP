@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Activity 3 - Bitwise Operators</title>
+  <link rel="stylesheet" href="activity3.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Activity 3: Bitwise Operators</h1>
+
+    <section class="explanation">
+      <h2>What are Bitwise Operators?</h2>
+      <p>
+        Bitwise operators are used to perform operations on binary numbers. Each number is first converted to binary, and then the operation is done **bit by bit** (0s and 1s).
+      </p>
+    </section>
+
+    <section class="operators">
+      <h2>Common Bitwise Operators</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Operator</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&amp;</td>
+            <td>AND</td>
+            <td>Returns 1 if both bits are 1</td>
+          </tr>
+          <tr>
+            <td>|</td>
+            <td>OR</td>
+            <td>Returns 1 if at least one bit is 1</td>
+          </tr>
+          <tr>
+            <td>^</td>
+            <td>XOR</td>
+            <td>Returns 1 if bits are different</td>
+          </tr>
+          <tr>
+            <td>~</td>
+            <td>NOT</td>
+            <td>Flips all bits (1 to 0, 0 to 1)</td>
+          </tr>
+          <tr>
+            <td>&lt;&lt;</td>
+            <td>Left Shift</td>
+            <td>Shifts bits to the left (adds zeros)</td>
+          </tr>
+          <tr>
+            <td>&gt;&gt;</td>
+            <td>Right Shift</td>
+            <td>Shifts bits to the right</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="example">
+      <h2>Example</h2>
+      <p>Let's try this:</p>
+      <pre>
+Number A = 5   → Binary: 0101  
+Number B = 3   → Binary: 0011
+
+A & B = 0101 & 0011 = 0001 → Result: 1
+A | B = 0101 | 0011 = 0111 → Result: 7
+A ^ B = 0101 ^ 0011 = 0110 → Result: 6
+      </pre>
+    </section>
+  </div>
+</body>
+</html>

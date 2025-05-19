@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Activity 1 - Introduction to JavaScript</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9fafb;
+      color: #222;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1e40af;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      color: #2563eb;
+      margin-top: 1.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Introduction to JavaScript</h1>
+
+  <p>JavaScript is a versatile, high-level programming language that is primarily used for enhancing the interactivity and functionality of web pages. It was created by Brendan Eich in 1995 and has since become one of the core technologies of the World Wide Web, alongside HTML and CSS. Here are some key points to understand about JavaScript:</p>
+
+  <h2>1. Client-Side Scripting</h2>
+  <p>JavaScript is predominantly a client-side scripting language, meaning it runs in the user's web browser rather than on the server. This allows developers to create dynamic and interactive web applications that respond to user actions without needing to reload the page.</p>
+
+  <h2>2. Dynamic and Interactive Content</h2>
+  <p>With JavaScript, developers can manipulate the Document Object Model (DOM) to dynamically change the content, structure, and style of web pages. This enables features such as form validation, animations, and real-time updates, enhancing the user experience.</p>
+
+  <h2>3. Event-Driven Programming</h2>
+  <p>JavaScript is event-driven, meaning it can respond to user actions such as clicks, mouse movements, keyboard input, and more. This allows developers to create interactive applications that react to user input in real-time.</p>
+
+  <h2>4. Versatile and Multi-Paradigm</h2>
+  <p>JavaScript supports multiple programming paradigms, including procedural, object-oriented, and functional programming. This versatility allows developers to choose the best approach for their specific use case.</p>
+
+  <h2>5. Asynchronous Programming</h2>
+  <p>JavaScript supports asynchronous programming through callbacks, promises, and the async/await syntax. This allows developers to perform tasks such as fetching data from a server without blocking the execution of other code, leading to smoother user experiences.</p>
+
+  <h2>6. Wide Ecosystem and Libraries</h2>
+  <p>JavaScript has a rich ecosystem of libraries and frameworks, such as React, Angular, and Vue.js, which simplify the development of complex applications. Additionally, Node.js allows JavaScript to be used on the server side, enabling full-stack development with a single language.</p>
+
+  <h2>7. Cross-Platform Compatibility</h2>
+  <p>JavaScript is supported by all modern web browsers, making it a cross-platform language. This means that code written in JavaScript can run on various devices and operating systems without modification.</p>
+
+  <h2>8. Community and Resources</h2>
+  <p>JavaScript has a large and active community, providing a wealth of resources, tutorials, and documentation. This makes it easier for beginners to learn and for experienced developers to find solutions to complex problems.</p>
+
+<div class="interactive">
+    <button onclick="changeText()">Click Me</button>
+    <h2 id="greeting">Hello, world!</h2>
+  </div>
+
+  <script>
+    function changeText() {
+      const greeting = document.getElementById('greeting');
+      if (greeting.textContent === 'Hello, world!') {
+        greeting.textContent = 'You clicked the button!';
+      } else {
+        greeting.textContent = 'Hello, world!';
+      }
+    }
+  </script>
+
+</body>
+</html>

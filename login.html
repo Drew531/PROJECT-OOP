@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div id="login-box">
+    <div class="profile-pic">
+      <img src="images/logo.jfif"Profile" />
+    </div>
+
+    <form id="login-form">
+      <div id="error-msg"></div>
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter your username" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password" required />
+      <button type="submit">Log in</button>
+    </form>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('login-form');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const errorMsg = document.getElementById('error-msg');
+
+    const validUsers = [
+      { username: "andrew123", password: "12345" },
+      { username: "marcelino123", password: "12345" }
+    ];
+
+    function validateLogin(username, password) {
+      return validUsers.some(user => user.username === username && user.password === password);
+    }
+
+    loginForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const username = usernameInput.value.trim();
+      const password = passwordInput.value;
+      if (!validateLogin(username, password)) {
+        errorMsg.textContent = 'Invalid username or password.';
+        return;
+      }
+      errorMsg.textContent = '';
+      window.location.href = `dashboard.html?user=${encodeURIComponent(username)}`;
+    });
+  </script>
+</body>
+</html>
